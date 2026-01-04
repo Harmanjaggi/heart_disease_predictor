@@ -1,0 +1,134 @@
+{
+    "age": {
+        "description": "Age of the patient",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620700"
+    },
+    "sex": {
+        "description": "Gender (1 = male, 0 = female)",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620704"
+    },
+    "dataset": {
+        "description": "Clinical feature",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620705"
+    },
+    "cp": {
+        "description": "Clinical feature",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620706"
+    },
+    "trestbps": {
+        "description": "Resting blood pressure",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620707"
+    },
+    "chol": {
+        "description": "Serum cholesterol level",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620708"
+    },
+    "fbs": {
+        "description": "Fasting blood sugar > 120 mg/dl",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620709"
+    },
+    "restecg": {
+        "description": "Resting ECG result",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620711"
+    },
+    "thalch": {
+        "description": "Maximum heart rate achieved",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620713"
+    },
+    "exang": {
+        "description": "Exercise induced angina",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620714"
+    },
+    "oldpeak": {
+        "description": "ST depression induced by exercise",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620715"
+    },
+    "slope": {
+        "description": "Slope of peak exercise ST segment",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620716"
+    },
+    "ca": {
+        "description": "Number of major vessels",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620717"
+    },
+    "thal": {
+        "description": "Thalassemia status",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620717"
+    },
+    "num": {
+        "description": "Heart disease diagnosis (target)",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620718"
+    },
+    "age_risk": {
+        "description": "Normalized age-based cardiac risk",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620719"
+    },
+    "bp_risk": {
+        "description": "High blood pressure risk",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620720"
+    },
+    "chol_risk": {
+        "description": "High cholesterol risk",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620721"
+    },
+    "exercise_risk": {
+        "description": "Exercise-induced angina risk",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620722"
+    },
+    "st_severity": {
+        "description": "ST depression severity",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620723"
+    },
+    "vessel_risk": {
+        "description": "Major vessel blockage risk",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620724"
+    },
+    "cardiac_risk_score": {
+        "description": "Composite cardiac risk score",
+        "source": "Heart Disease Feature Engineering Pipeline",
+        "version": 1,
+        "created_at": "2026-01-04T22:42:17.620725"
+    }
+}
