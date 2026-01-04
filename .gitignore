@@ -1,0 +1,78 @@
+# ----------------
+# Python
+# ----------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+logs/
+*.out
+
+# ----------------
+# Conda
+# ----------------
+*.conda
+conda-meta/
+*.yaml
+*.yml
+
+# ----------------
+# MLflow
+# ----------------
+mlruns/
+mlartifacts/
+
+# ----------------
+# Airflow
+# ----------------
+airflow.cfg
+airflow.db
+unittests.cfg
+dags/*.pyc
+__pycache__/
+
+# ----------------
+# PostgreSQL
+# ----------------
+*.sql
+*.sql.gz
+*.dump
+*.backup
+pgdata/
+pg_log/
+*.conf
+*.pgpass
+*.pgadmin/
+
+# ----------------
+# OS generated
+# ----------------
+.DS_Store
+Thumbs.db
+*.swp
+
+# ----------------
+# IDEs
+# ----------------
+.vscode/
+.idea/
+*.iml
