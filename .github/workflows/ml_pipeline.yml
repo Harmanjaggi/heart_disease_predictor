@@ -16,8 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # We skip 'Set up Python' and 'Install dependencies' here 
+      # because the Dockerfile handles them internally now.
+
       - name: Build Docker image
+        # This will run 'pytest tests/' as defined in your Dockerfile.
+        # If tests fail, the build fails here.
         run: docker build -t heart-disease-ml .
 
       - name: Run ML pipeline
-        run: docker run heart-disease-ml
+        # --rm automatically removes the container when it exits
+        run: docker run --rm heart-disease-ml
