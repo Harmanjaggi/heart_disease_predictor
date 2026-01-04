@@ -1,9 +1,8 @@
-# ----------------
+# ================================
 # Python
-# ----------------
+# ================================
 __pycache__/
 *.py[cod]
-*$py.class
 
 # Virtual environments
 venv/
@@ -12,67 +11,42 @@ env/
 .env/
 
 # Packaging
-*.egg
-*.egg-info/
 dist/
 build/
+*.egg-info/
 *.whl
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# Logs
-*.log
+# ================================
+# Logs & Runtime Artifacts
+# ================================
 logs/
+*.log
 *.out
 
-# ----------------
-# Conda
-# ----------------
-*.conda
-conda-meta/
-*.yaml
-*.yml
-
-# ----------------
-# MLflow
-# ----------------
+# ================================
+# Data & Artifacts (generated)
+# ================================
+data/
+reports/
 mlruns/
 mlartifacts/
 
-# ----------------
-# Airflow
-# ----------------
-airflow.cfg
-airflow.db
-unittests.cfg
-dags/*.pyc
-__pycache__/
-
-# ----------------
-# PostgreSQL
-# ----------------
-*.sql
-*.sql.gz
-*.dump
-*.backup
-pgdata/
-pg_log/
-*.conf
-*.pgpass
-*.pgadmin/
-
-# ----------------
-# OS generated
-# ----------------
+# ================================
+# OS Generated
+# ================================
 .DS_Store
 Thumbs.db
 *.swp
 
-# ----------------
+# ================================
 # IDEs
-# ----------------
+# ================================
 .vscode/
 .idea/
 *.iml
+
+# ================================
+# GitHub Actions (ALLOW)
+# ================================
+!.github/workflows/*.yml
+!.github/workflows/*.yaml
