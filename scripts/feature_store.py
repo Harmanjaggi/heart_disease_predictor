@@ -9,7 +9,6 @@ from datetime import datetime
 # =========================================================
 LOG_DIR = "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
-
 logging.basicConfig(
     filename=os.path.join(LOG_DIR, "feature_store.log"),
     level=logging.INFO,
@@ -24,13 +23,12 @@ def log_and_print(msg):
 # Paths
 # =========================================================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 TRANSFORMED_DIR = os.path.join(BASE_DIR, "data", "transformed")
 FEATURE_STORE_DIR = os.path.join(BASE_DIR, "data", "feature_store")
-VERSION_DIR = os.path.join(FEATURE_STORE_DIR, "versions", "v1")
+VERSIONS_DIR = os.path.join(FEATURE_STORE_DIR, "versions")
 
 os.makedirs(FEATURE_STORE_DIR, exist_ok=True)
-os.makedirs(VERSION_DIR, exist_ok=True)
+os.makedirs(VERSIONS_DIR, exist_ok=True)
 
 # =========================================================
 # Load Transformed Data
@@ -39,18 +37,19 @@ def load_transformed_data():
     path = os.path.join(TRANSFORMED_DIR, "heart_disease_transformed.parquet")
     if not os.path.exists(path):
         raise FileNotFoundError("❌ Transformed file not found")
-
     log_and_print(f"📥 Loading transformed data → {path}")
     return pd.read_parquet(path)
 
 # =========================================================
-# Store Features (FILE-BASED FEATURE STORE)
+# Store Features
 # =========================================================
 def store_features(df):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    version_dir = os.path.join(VERSIONS_DIR, f"v_{timestamp}")
+    os.makedirs(version_dir, exist_ok=True)
 
     main_path = os.path.join(FEATURE_STORE_DIR, "heart_features.parquet")
-    versioned_path = os.path.join(VERSION_DIR, f"heart_features_{timestamp}.parquet")
+    versioned_path = os.path.join(version_dir, f"heart_features_{timestamp}.parquet")
 
     df.to_parquet(main_path, index=False)
     df.to_parquet(versioned_path, index=False)
@@ -58,13 +57,14 @@ def store_features(df):
     log_and_print("✅ Features stored in feature store")
     log_and_print(f"📦 Latest → {main_path}")
     log_and_print(f"🕒 Versioned → {versioned_path}")
+    return main_path, versioned_path
 
 # =========================================================
 # Store Feature Metadata
 # =========================================================
 def store_feature_metadata(df):
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     metadata = {}
-
     descriptions = {
         "age": "Age of the patient",
         "sex": "Gender (1 = male, 0 = female)",
@@ -96,11 +96,12 @@ def store_feature_metadata(df):
             "created_at": datetime.now().isoformat()
         }
 
-    meta_path = os.path.join(FEATURE_STORE_DIR, "feature_metadata.json")
+    meta_path = os.path.join(FEATURE_STORE_DIR, f"feature_metadata_{timestamp}.json")
     with open(meta_path, "w") as f:
         json.dump(metadata, f, indent=4)
 
     log_and_print(f"🧾 Feature metadata saved → {meta_path}")
+    return meta_path
 
 # =========================================================
 # Main
