@@ -24,9 +24,14 @@ logs/
 *.out
 
 # ================================
-# Data & Artifacts (generated)
+# Data & Artifacts
 # ================================
-data/
+# Ignore everything in processed
+data/processed/*
+# But allow the main CSV you want to track
+!data/processed/heart_disease_uci.csv
+
+# Also ignore reports, MLflow
 reports/
 mlruns/
 mlartifacts/
